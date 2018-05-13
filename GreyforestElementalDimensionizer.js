@@ -40,7 +40,7 @@ $( document ).on( "mousemove touchmove", function( event ) {
 	
 	// if log legend exists, display coordinates in realtime
 	if ( log == true ) { 
-	$('#element-logs').html("pageX: " + parseFloat(x, 2) + "%, pageY: " + y + "%<br>pageX: " + event.pageX + ", pageY: " + event.changedTouches[0].clientY);
+	$('#element-logs').html("pageX: " + parseFloat(x, 2) + "%, pageY: " + y + "%<br>pageX: " + event.pageX + ", pageY: " + event.changedTouches[0].pageY);
 	}
 	
 	// start layer loop to find each instance inside parent
