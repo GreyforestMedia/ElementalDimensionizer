@@ -32,7 +32,7 @@ function ElementalDimensionizer(element, log) {
 	if ( $('#element-frame').length ) {}
 	else { $("<div id='element-frame' style='position:fixed;top:0;left:0;width:100%;height:100%;display:block;z-index:-1000'></div>").appendTo('body'); }
 
-	// test for mobile
+	// test for touch events
 	var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
 	
 	
@@ -43,7 +43,7 @@ $( document ).on( "mousemove touchmove", function( event ) {
 	var getX = event.changedTouches[0].pageX; 
 	var getY = event.changedTouches[0].pageY; 
 	}
-	elseif ( isTouch === 'undefined' || !isTouch || isTouch === false ) { 
+	else if ( isTouch === 'undefined' || !isTouch || isTouch === false ) { 
 	var getX = event.pageX; 
 	var getY = event.pageY; 
 	}
