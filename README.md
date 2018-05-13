@@ -1,6 +1,8 @@
 # Elemental Dimensionizer
 A small jQuery-based function for transforming elements in multiple dimensions based on cursor position.
 
+VIEW DEMO: https://greyforestmedia.github.io/ElementalDimensionizer/
+
 ![Demonstration](/media/GreyforestElementalDimensionizer.gif)
 
 ## OPTIONS
@@ -14,25 +16,22 @@ A small jQuery-based function for transforming elements in multiple dimensions b
 
 **Create a parent element to hold the layers**
 
-`<div id="element">`
+    <div id="element">
 
 **Apply "element-dimension" class to desired layers**
 
-`<h2 class="element-dimension"`
+    <h2 class="element-dimension"
 
 **Add optional data attributes**
 
-`data-dimension-x-inverse="true"`
-
-`data-dimension-x-sensitivity="2"`
-
-`data-dimension-y-inverse="false"`
-
-`data-dimension-y-sensitivity="3"`
+    data-dimension-x-inverse="true"
+    data-dimension-x-sensitivity="2"
+    data-dimension-y-inverse="false"
+    data-dimension-y-sensitivity="3"
 
 **Include layer text/img/etc and close parent element**
 
-`>Greyforest Elemental Dimensionalizer</h2></div>`
+    >Greyforest Elemental Dimensionalizer</h2></div>
 
 **Initialize script and target parent element**
 * **element:** set ID of parent element that contains layers
