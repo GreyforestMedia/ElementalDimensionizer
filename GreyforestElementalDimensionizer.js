@@ -75,8 +75,11 @@ $( document ).on( "mousemove touchmove", function( event ) {
 	// apply rotate css in realtime
 	$(this).css({
 	'transform':'rotateY('+ xdegree +'deg) rotateX('+ ydegree +'deg)',
+	'-webkit-transform':'rotateY('+ xdegree +'deg) rotateX('+ ydegree +'deg)',		
 	'transform-origin':'center',
-	'transition':'.000001s'
+	'-webkit-transform-origin':'center',		
+	'transition':'.000001s',
+	'-webkit-transition':'.000001s'
   	});	
 	
 	}); // end each loop
