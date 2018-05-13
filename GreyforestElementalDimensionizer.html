@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+<title>Greyforest Elemental Dimensionizer</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> 
+
+<style>
+* {box-sizing:border-box;margin:0px;padding:0px;}
+body {margin:0;padding:0;height:auto;width:100%;background-color:#ddd;font-family:'Raleway';}
+#bg {margin:0;padding:0;position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:url('grid.png');background-size:100% 100%;}
+#element {display:block;z-index:2;position:fixed;top:50%;left:50%;width:300px;height:auto;transform:translateX(-50%) translateY(-50%);}
+#element img {display:block;width:100%;  
+   -webkit-perspective: 1000;
+   -moz-perspective: 1000;
+   -ms-perspective: 1000;
+   perspective: 1000;}
+
+h1 {font-weight:200;display:block;position:fixed;text-align:center;top:0;width:100%;left:0;font-size:22px;padding:10px;background:#aaa;color:#fff;}
+h2 {display:block;position:relative;text-align:center;top:0;width:100%;left:0;font-size:17px;padding:10px;background:#aaa;color:#fff;}
+</style>
+
+</head>
+
+<body>
+<div id="bg"></div>
+<h1>Greyforest Elemental Dimensionalizer</h1>
+
+
+<div id="element">
+
+<h2 class="element-dimension"
+data-dimension-x-inverse="true" 
+data-dimension-x-sensitivity="2" 
+data-dimension-y-inverse="false" 
+data-dimension-y-sensitivity="3">
+Greyforest Elemental Dimensionalizer</h2>
+
+<img class="element-dimension" 
+data-dimension-x-inverse="true" 
+data-dimension-x-sensitivity="2" 
+data-dimension-y-inverse="false" 
+data-dimension-y-sensitivity="1"
+src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARQAAAEUCAYAAADqcMl5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODcyM0NCNzgwMkZCMTFFODlEMUM4RjAwRTY3NjFBM0QiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODcyM0NCNzkwMkZCMTFFODlEMUM4RjAwRTY3NjFBM0QiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzIzQ0I3NjAyRkIxMUU4OUQxQzhGMDBFNjc2MUEzRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NzIzQ0I3NzAyRkIxMUU4OUQxQzhGMDBFNjc2MUEzRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PheKHPQAAAyzSURBVHja7N3bjuS6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">
+</div>
+
+
+
+<script>
+///////////////////////////////////////////////////////////////////////////////////////////////
+//
+// GREYFOREST Elemental Dimensionalizer
+//
+///////////////////////////////////////////////////////////////////////////////////////////////
+// 
+// OPTIONS: 
+// data-dimension-x-inverse: invert x rotation
+// data-dimension-y-inverse: invert y rotation
+// data-dimension-x-sensitivity: sensitivity of x rotation
+// data-dimension-y-sensitivity: sensitivity of y rotation
+//
+///////////////////////////////////////////////////////////////////////////////////////////////
+// 
+// USAGE:
+// ElementalDimensionizer(element, log);
+//
+// element: set ID of parent element that contains layers
+// log: true or false for small box to display coordinates legend
+//
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+function ElementalDimensionizer(element, log) {
+
+	// if log are set to true, display coordinates legend
+	if ( log == true ) { 
+		if ( $('#element-logs').length ) {}
+		else { $("<div id='element-logs' style='font-family:Courier New, monospace;font-size:10px;text-transform:uppercase;position:fixed;top:0;left:0;z-index:99999;background:#000;color:#fff;padding:1em;font-size:10px;'></div>").appendTo('body'); }
+	}
+
+	// if screengrabber isn't set, set it
+	if ( $('#element-frame').length ) {}
+	else { $("<div id='element-frame' style='position:fixed;top:0;left:0;width:100%;height:100%;display:block;z-index:-1000'></div>").appendTo('body'); }
+
+$( document ).on( "mousemove touchmove", function( event ) {
+	
+	// get coordinate percentages of page width and current screen height with center as origin
+	var x = parseFloat(((event.pageX / $('#element-frame').width())*100)-50).toFixed(0);
+	var y = parseFloat(((event.clientY / $('#element-frame').height())*100)-50).toFixed(0);
+	
+	// if log legend exists, display coordinates in realtime
+	if ( log == true ) { 
+	$('#element-logs').html("pageX: " + parseFloat(x, 2) + "%, pageY: " + y + "%<br>pageX: " + event.pageX + ", pageY: " + event.clientY);
+	}
+	
+	// start layer loop to find each instance inside parent
+	$(element + ' .element-dimension').each( function() {
+
+	// get data attributes for each layer if set
+	var sensitivityx = $(this).data('dimension-x-sensitivity');
+	var sensitivityy = $(this).data('dimension-y-sensitivity');
+	var inversex = $(this).data('dimension-x-inverse');
+	var inversey = $(this).data('dimension-y-inverse');
+ 
+	// set default sensitivity of x
+	if ( typeof sensitivityx === 'undefined' || !sensitivityx )  { var sensitivityx = -1; }
+
+	// set default sensitivity of y
+	if ( typeof sensitivityy === 'undefined' || !sensitivityy )  { var sensitivityy = -1; }
+  
+	// set default inverse option of x
+	if ( typeof inversex === 'undefined' || !inversex )  { var inversex = false; }	
+	
+	// set default inverse option of y
+	if ( typeof inversey === 'undefined' || !inversey )  { var inversey = false; }
+  
+	// bridge x sensitivity and inverse
+	if ( inversey === true ) { xdegree = sensitivityx*x*-1; }
+	else { xdegree = sensitivityx*x*1; }
+	
+	// bridge y sensitivity and inverse
+	if ( inversex === true ) { ydegree = sensitivityy*y*-1; }
+	else { ydegree = sensitivityy*y*1; }
+  
+	// apply rotate css in realtime
+	$(this).css({
+	'transform':'rotateY('+ xdegree +'deg) rotateX('+ ydegree +'deg)',
+	'transform-origin':'center',
+	'transition':'.000001s'
+  	});	
+	
+	}); // end each loop
+});
+}
+
+// INIT ELEMENT
+ElementalDimensionizer('#element', true);
+</script>
+
+</body>
+</html>
