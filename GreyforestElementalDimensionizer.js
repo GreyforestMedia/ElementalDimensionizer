@@ -32,15 +32,29 @@ function ElementalDimensionizer(element, log) {
 	if ( $('#element-frame').length ) {}
 	else { $("<div id='element-frame' style='position:fixed;top:0;left:0;width:100%;height:100%;display:block;z-index:-1000'></div>").appendTo('body'); }
 
+	// test for mobile
+	var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+	
+	
 $( document ).on( "mousemove touchmove", function( event ) {
 	
+	// set coordinates capture code based on mobile/desktop
+	if ( isTouch == true ) { 
+	var getX = event.changedTouches[0].pageX; 
+	var getY = event.changedTouches[0].pageY; 
+	}
+	else { 
+	var getX = event.pageX; 
+	var getY = event.pageY; 
+	}
+	
 	// get coordinate percentages of page width and current screen height with center as origin
-	var x = parseFloat(((event.pageX / $('#element-frame').width())*100)-50).toFixed(0);
-	var y = parseFloat(((event.clientY / $('#element-frame').height())*100)-50).toFixed(0);
+	var x = parseFloat(((getX / $('#element-frame').width())*100)-50).toFixed(0);
+	var y = parseFloat(((getY / $('#element-frame').height())*100)-50).toFixed(0);
 	
 	// if log legend exists, display coordinates in realtime
 	if ( log == true ) { 
-	$('#element-logs').html("pageX: " + parseFloat(x, 2) + "%, pageY: " + y + "%<br>pageX: " + event.pageX + ", pageY: " + event.changedTouches[0].pageY);
+	$('#element-logs').html("pageX: " + x + "%, pageY: " + y + "%<br>pageX: " + getX + ", pageY: " + getY);
 	}
 	
 	// start layer loop to find each instance inside parent
