@@ -12,15 +12,15 @@ A small jQuery-based function for transforming elements in multiple dimensions b
 
 ## USAGE
 
-Create a parent element to hold the layers.
+**Create a parent element to hold the layers**
 
 `<div id="element">`
 
-Apply "element-dimension" class to desired layers
+**Apply "element-dimension" class to desired layers**
 
 `<h2 class="element-dimension"`
 
-Add optional data attributes
+**Add optional data attributes**
 
 `data-dimension-x-inverse="true"`
 
@@ -30,11 +30,14 @@ Add optional data attributes
 
 `data-dimension-y-sensitivity="3"`
 
-Include layer text/img/etc and close parent element
+**Include layer text/img/etc and close parent element**
+
 `>Greyforest Elemental Dimensionalizer</h2></div>`
 
-Initialize script and target parent element
-`<script> ElementalDimensionizer(element, log); </script>`
-
+**Initialize script and target parent element**
 * **element:** set ID of parent element that contains layers
 * **log:** true or false for small box to display coordinates legend
+
+`<script> ElementalDimensionizer(element, log); </script>`
+
+
