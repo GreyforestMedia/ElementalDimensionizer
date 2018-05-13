@@ -43,7 +43,7 @@ $( document ).on( "mousemove touchmove", function( event ) {
 	var getX = event.changedTouches[0].pageX; 
 	var getY = event.changedTouches[0].pageY; 
 	}
-	else { 
+	elseif ( isTouch === 'undefined' || !isTouch || isTouch === false ) { 
 	var getX = event.pageX; 
 	var getY = event.pageY; 
 	}
